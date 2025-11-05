@@ -204,18 +204,7 @@
         <span style="font-family: 'Inter'; font-weight: 900; position: relative; left: -6%;">mDowód</span>
         <img style="width: 25px; height: 25px;" src="./dowodnowy_files/madziamojakotka123.svg" alt="">
     </header>
-   <div class="info-section" id="info-section" style="margin-left: 20px; margin-right: 20px;">
-    <p>
-      <img src="./dowodnowy_files/normal_u391.svg" alt="Info Icon">
-      Kiedy nie skorzystasz z mDowodu
-    </p>
-    <p>
-      Gdy załatwiasz sprawę w banku (do 31 sierpnia), wyjeżdżasz za granicę i składasz wniosek o dowód osobisty.
-    </p>
-    <div class="center-icons">
-      <img src="./dowodnowy_files/normal_u394.svg" alt="Left Icon" id="left-icon">
-      <img src="./dowodnowy_files/normal_u393.svg" alt="Right Icon" id="right-icon">
-    </div>
+
   </div>
   <div class="info-section blue" id="blue-section" style="display: none; margin-left: 20px; margin-right: 20px;">
     <p>
@@ -263,24 +252,106 @@
         <img src="./dowodnowy_files/checkmark.svg" alt="checkmark">
         <p>Dokument ważny</p>
     </section>
+	
+	
 
+<!-- NOWE OKRĄGŁE KAFELKI JAK W MOBYWATELU -->
+<div class="tile-container">
+  <!-- Kafelek 1 -->
+  <div class="tile" onclick="potwierdzmenu()">
+    <div class="tile-circle">
+      <img src="./dowodnowy_files/checkbo.png" alt="Potwierdź swoje dane">
+    </div>
+    <p>Potwierdź<br>swoje dane</p>
+  </div>
 
-    <!-- Sekcja z potwierdz swoje dane i dane dokumentu + zdjecia -->
-    <a class="buto" style="cursor: pointer; display: flex; align-items: center; padding: 40px 20px ; border-radius: 10px; background-color: white; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-        <img src="./dowodnowy_files/checkbo.png" alt="checkbox">
-        <p style="margin-left: 10px; font-weight: bold;">Potwierdź swoje dane</p>
-        <img src="./dowodnowy_files/arrow.svg" alt="arrow" id="arrow">
-    </a>
+ <!-- Kafelek 2 -->
+<div class="tile" onclick="wybordokumentumenu()">
+  <div class="tile-circle">
+    <img src="./dowodnowy_files/card.png" alt="Dane dokumentu" class="card-icon">
+  </div>
+  <p>Dane<br>dokumentu</p>
+  </div>
 
-    <div class="buto" style="cursor: pointer; display: flex; align-items: center; padding: 40px 20px ; border-radius: 10px; background-color: white; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);" onclick="wybordokumentumenu()">
-        <img src="./dowodnowy_files/card.png" alt="card">
-        <p style="margin-left: 10px; font-weight: bold;">Dane dokumentu</p>
-        <img src="./dowodnowy_files/arrow.svg" alt="arrow" id="arrow">
-    </div>    
-    <section class="collapsible buto" id="lo" style="cursor: pointer; display: flex; align-items: center; padding: 40px 20px ; border-radius: 10px; background-color: white; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-        
-        <p style="margin-left: -7px; font-weight: bold;">Twoje dodatkowe dane</p>
+  <!-- Kafelek 3 -->
+  <div class="tile" onclick="pokazDodatkoweDane()">
+    <div class="tile-circle">
+      <img src="./dowodnowy_files/arrow.svg" alt="Twoje dodatkowe dane">
+    </div>
+    <p>Twoje<br>dodatkowe dane</p>
+  </div>
 
+  <!-- Kafelek 4 -->
+  <div class="tile" onclick="window.location.href='more.html'">
+    <div class="tile-circle">
+      <img src="./dowodnowy_files/ab010_more.svg" alt="Pozostałe skróty">
+    </div>
+    <p>Pozostałe<br>skróty</p>
+  </div>
+</div>
+
+<style>
+/* --- KAFELKI W STYLU MOBYWATEL --- */
+.tile-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 25px 0;
+  padding: 0 10px;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  color: #2f353f;
+  flex: 1;
+  min-width: 80px;
+}
+
+.tile-circle {
+  width: 75px;
+  height: 75px;
+  background: linear-gradient(180deg, #ffffff 0%, #f5f7fa 100%);
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.tile-circle img {
+  width: 36px;
+  height: 36px;
+  opacity: 0.9;
+}
+
+.tile-circle:hover {
+  background: linear-gradient(180deg, #e9f2ff 0%, #f3f8ff 100%);
+  transform: scale(1.06);
+}
+
+.tile p {
+  margin-top: 7px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1c1f23;
+  line-height: 1.15em;
+  /* Mniejsza ikonka dla "Dane dokumentu" */
+.tile-circle .card-icon {
+  width: 28px;
+  height: 28px;
+  opacity: 0.9;
+  margin-top: 2px;
+}
+</style>
+  
         <img src="./dowodnowy_files/arrow.svg" alt="arrow" id="rotation" style="transform: rotate(-90deg);">
     </section>
     <div id="rogo">
@@ -517,6 +588,152 @@
             blueSection.style.display = 'none';
         });
   </script>
+<!-- MODAL - TWOJE DODATKOWE DANE -->
+<div id="dodatkoweModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="zamknijModal()">&times;</span>
+    <h2>Twoje dodatkowe dane</h2>
+
+    <div class="content">
+      <p class="krecha"></p>
+      <section class="dana">
+        <p class="info">Nazwisko rodowe</p>
+        <p class="main">SZLAMA</p>
+      </section>
+      <p class="krecha"></p>
+      <section class="dana">
+        <p class="info">Płeć</p>
+        <p class="main">Mężczyzna</p>
+      </section>
+      <p class="krecha"></p>
+      <section class="dana">
+        <p class="info">Nazwisko rodowe ojca</p>
+        <p class="main">SZLAMA</p>
+      </section>
+      <p class="krecha"></p>
+      <section class="dana">
+        <p class="info">Nazwisko rodowe matki</p>
+        <p class="main">MAZUR</p>
+      </section>
+      <p class="krecha"></p>
+      <section class="dana">
+        <p class="info">Miejsce urodzenia</p>
+        <p class="main">KRAKÓW</p>
+      </section>
+      <p class="krecha"></p>
+      <section class="dana">
+        <p class="info">Adres zameldowania na pobyt stały</p>
+        <p class="main">UL. ZAGUMNA 53</p>
+        <p class="main">38-530 ZARSZYN</p>
+      </section>
+      <p class="krecha"></p>
+      <section class="dana">
+        <p class="info">Data zameldowania na pobyt stały</p>
+        <p class="main">2011-03-13</p>
+      </section>
+    </div>
+  </div>
+</div>
+
+<style>
+/* NAKŁADKA MODALNA */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+/* OKNO WEWNĘTRZNE */
+.modal-content {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 25px 30px;
+  width: 90%;
+  max-width: 480px;
+  max-height: 80%;
+  overflow-y: auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  font-family: 'Inter', sans-serif;
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+/* TYTUŁ I ZAMKNIĘCIE */
+.modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1c1f23;
+}
+
+.close {
+  color: #333;
+  float: right;
+  font-size: 26px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  right: 25px;
+  top: 15px;
+}
+
+.close:hover {
+  color: #007aff;
+}
+
+/* Dane w środku */
+.modal-content .dana {
+  margin-bottom: 10px;
+}
+
+.modal-content .info {
+  font-size: 13px;
+  color: #7a7a7a;
+  margin-bottom: 3px;
+}
+
+.modal-content .main {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1c1f23;
+}
+
+.krecha {
+  border-bottom: 1px solid #e3e3e3;
+  margin: 8px 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<script>
+function pokazDodatkoweDane() {
+  document.getElementById('dodatkoweModal').style.display = 'flex';
+}
+
+function zamknijModal() {
+  document.getElementById('dodatkoweModal').style.display = 'none';
+}
+
+window.onclick = function(event) {
+  const modal = document.getElementById('dodatkoweModal');
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+}
+</script>
+
 
 <audio class="audio-output" style="display: none;"></audio><div id="volume-booster-visusalizer">
                     <div class="sound">
